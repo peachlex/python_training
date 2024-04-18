@@ -11,13 +11,13 @@ def app(request):
     return fixture
 
 
-def test_add_contact(app):
+def test_create_contact(app):
     app.session.login("admin", "secret")
-    app.add_new_contact(Contact("Ivan", "Ivanovich", "Ivanov"))
+    app.contact.create(Contact("Ivan", "Ivanovich", "Ivanov"))
     app.session.logout()
 
 
-def test_add_empty_contact(app):
+def test_create_empty_contact(app):
     app.session.login("admin", "secret")
-    app.add_new_contact(Contact("", "", ""))
+    app.contact.create(Contact("", "", ""))
     app.session.logout()
