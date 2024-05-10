@@ -8,7 +8,7 @@ class ContactHelper:
         self.app.open_home_page()
         # init user creation
         wd.find_element_by_link_text("add new").click()
-        self.fill_contact_info(contact, wd)
+        self.fill_contact_info(contact)
         # submit contact creation
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("home page").click()
@@ -24,12 +24,13 @@ class ContactHelper:
         self.app.open_home_page()
         # init contact edition
         wd.find_element_by_xpath('//img[@title="Edit"]').click()
-        self.fill_contact_info(contact, wd)
+        self.fill_contact_info(contact)
         # update info
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("home page").click()
 
-    def fill_contact_info(self, contact, wd):
+    def fill_contact_info(self, contact):
+        wd = self.app.wd
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.first_name)
