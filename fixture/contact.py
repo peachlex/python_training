@@ -11,7 +11,7 @@ class ContactHelper:
         self.fill_contact_info(contact)
         # submit contact creation
         wd.find_element_by_name("submit").click()
-        wd.find_element_by_link_text("home page").click()
+        self.return_to_home_page()
 
     def delete_first_contact(self):
         wd = self.app.wd
@@ -27,6 +27,10 @@ class ContactHelper:
         self.fill_contact_info(contact)
         # update info
         wd.find_element_by_name("update").click()
+        self.return_to_home_page()
+
+    def return_to_home_page(self):
+        wd = self.app.wd
         wd.find_element_by_link_text("home page").click()
 
     def fill_contact_info(self, contact):
