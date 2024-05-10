@@ -5,32 +5,31 @@ class ContactHelper:
 
     def create(self, contact):
         wd = self.app.wd
+        self.app.open_home_page()
         # init user creation
         wd.find_element_by_link_text("add new").click()
-        # fill contact card
-        wd.find_element_by_name("firstname").click()
-        wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys(contact.first_name)
-        wd.find_element_by_name("middlename").click()
-        wd.find_element_by_name("middlename").clear()
-        wd.find_element_by_name("middlename").send_keys(contact.middle_name)
-        wd.find_element_by_name("lastname").click()
-        wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys(contact.last_name)
+        self.fill_contact_info(contact, wd)
         # submit contact creation
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("home page").click()
 
     def delete_first_contact(self):
         wd = self.app.wd
+        self.app.open_home_page()
         wd.find_element_by_name('selected[]').click()
         wd.find_element_by_xpath('//input[@value="Delete"]').click()
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
+        self.app.open_home_page()
         # init contact edition
         wd.find_element_by_xpath('//img[@title="Edit"]').click()
-        # fill contact card
+        self.fill_contact_info(contact, wd)
+        # update info
+        wd.find_element_by_name("update").click()
+        wd.find_element_by_link_text("home page").click()
+
+    def fill_contact_info(self, contact, wd):
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.first_name)
@@ -40,7 +39,5 @@ class ContactHelper:
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
         wd.find_element_by_name("lastname").send_keys(contact.last_name)
-        wd.find_element_by_name("update").click()
-        wd.find_element_by_link_text("home page").click()
 
 
