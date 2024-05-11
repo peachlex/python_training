@@ -31,7 +31,8 @@ class ContactHelper:
 
     def return_to_home_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home page").click()
+        if not wd.current_url.endswith("/index.php"):
+            wd.find_element_by_link_text("home page").click()
 
     def fill_contact_info(self, contact):
         wd = self.app.wd
@@ -45,6 +46,7 @@ class ContactHelper:
             wd.find_element_by_name(field_name).click()
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
+
     def count(self):
         wd = self.app.wd
         self.app.open_home_page()
