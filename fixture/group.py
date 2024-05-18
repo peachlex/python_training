@@ -75,3 +75,5 @@ class GroupHelper:
             group_id = element.find_element_by_name("selected[]").get_attribute("value")
             groups.append(Group(name=text, group_id=group_id))
         return groups
+
+
