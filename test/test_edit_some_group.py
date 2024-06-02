@@ -3,7 +3,7 @@ from random import randrange
 from model.group import Group
 
 
-def test_edit_name_first_group(app):
+def test_edit_name_some_group(app):
     if app.group.count() == 0:
         app.group.create(Group("test", None, None))
     old_groups = app.group.get_group_list()
@@ -17,7 +17,7 @@ def test_edit_name_first_group(app):
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
 
-def test_edit_header_first_group(app):
+def test_edit_header_some_group(app):
     if app.group.count() == 0:
         app.group.create(Group("test", None, None))
     old_groups = app.group.get_group_list()

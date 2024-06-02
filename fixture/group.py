@@ -61,6 +61,7 @@ class GroupHelper:
 
     def edit_first_group(self):
         self.edit_group_by_index(0)
+
     def edit_group_by_index(self, index, new_group_data):
         wd = self.app.wd
         self.open_groups_page()
@@ -90,5 +91,3 @@ class GroupHelper:
                 group_id = element.find_element_by_name("selected[]").get_attribute("value")
                 self.group_cache.append(Group(name=text, group_id=group_id))
         return list(self.group_cache)
-
-
