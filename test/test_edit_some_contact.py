@@ -5,10 +5,10 @@ from model.contact import Contact
 
 def test_edit_some_contact(app):
     if app.contact.count() == 0:
-        app.contact.create(Contact("test", None, None))
+        app.contact.create(Contact("test", None))
     old_contacts = app.contact.get_contacts_list()
     index = randrange(len(old_contacts))
-    contact = Contact('Modified', 'Modified', 'Modified')
+    contact = Contact('Modified', 'Modified')
     contact.contact_id = old_contacts[index].contact_id
     app.contact.edit_contact_by_index(index, contact)
     assert len(old_contacts) == app.contact.count()
