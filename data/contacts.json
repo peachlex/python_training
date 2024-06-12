@@ -1,0 +1,62 @@
+[
+  {
+    "py/object": "model.contact.Contact",
+    "first_name": "",
+    "last_name": "",
+    "homephone": null,
+    "mobilephone": null,
+    "workphone": null,
+    "contact_id": null,
+    "all_phones_from_homepage": null,
+    "address": null,
+    "email1": null,
+    "email2": null,
+    "email3": null,
+    "all_emails_from_homepage": null
+  },
+  {
+    "py/object": "model.contact.Contact",
+    "first_name": "fname",
+    "last_name": "lnameB|F k",
+    "homephone": "home$8",
+    "mobilephone": "mobile",
+    "workphone": "workd ",
+    "contact_id": null,
+    "all_phones_from_homepage": null,
+    "address": "addressg+i   ",
+    "email1": "email2 ",
+    "email2": "email2OW ]",
+    "email3": "email3  D",
+    "all_emails_from_homepage": null
+  },
+  {
+    "py/object": "model.contact.Contact",
+    "first_name": "fnamer]/",
+    "last_name": "lname C4<]$",
+    "homephone": "homegewFO2M0I",
+    "mobilephone": "mobilegSDB",
+    "workphone": "work|",
+    "contact_id": null,
+    "all_phones_from_homepage": null,
+    "address": "address r",
+    "email1": "emailj.:",
+    "email2": "email2 2F(~[?",
+    "email3": "email3$AsD5|B1~",
+    "all_emails_from_homepage": null
+  },
+  {
+    "py/object": "model.contact.Contact",
+    "first_name": "fname",
+    "last_name": "lnamey6y",
+    "homephone": "home",
+    "mobilephone": "mobileF) 3",
+    "workphone": "work.",
+    "contact_id": null,
+    "all_phones_from_homepage": null,
+    "address": "address7u5VW",
+    "email1": "email6&SGpW.Qo",
+    "email2": "email2",
+    "email3": "email3",
+    "all_emails_from_homepage": null
+  }
+]
