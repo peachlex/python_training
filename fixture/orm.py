@@ -46,7 +46,7 @@ class ORMFixture:
         return self.convert_groups_to_model(select(g for g in ORMFixture.ORMGroup))
 
     @db_session
-    def get_contact_list(self):
+    def get_contacts_list(self):
         return self.convert_contacts_to_model(select(c for c in ORMFixture.ORMContact))
 
     @db_session
