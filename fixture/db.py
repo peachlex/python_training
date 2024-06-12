@@ -25,7 +25,7 @@ class DbFixture:
             cursor.close()
         return list
 
-    def get_contact_list(self):
+    def get_contacts_list(self):
         list = []
         cursor = self.connection.cursor()
         try:
