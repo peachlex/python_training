@@ -5,7 +5,7 @@ from model.contact import Contact
 
 
 def test_delete_some_contact(app, db, check_ui):
-    if len(db.get_group_list()) == 0:
+    if len(db.get_contacts_list()) == 0:
         app.contact.create(Contact("test", None, None))
     old_contacts = db.get_contacts_list()
     contact = random.choice(old_contacts)
