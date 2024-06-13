@@ -14,7 +14,7 @@ def test_add_contact_in_group(app, db, orm, check_ui):
     contact = random.choice(contacts)
     group = random.choice(groups)
     if len(orm.get_contacts_in_group(group)) > 0:
-        app.contact.remove_all_contacts_from_group_by_id(group)
+        app.contact.remove_all_contacts_from_group(group)
     app.contact.add_contact_in_group_by_id(contact, group)
     new_contacts = orm.get_contacts_list()
     list_contacts_in_group = orm.get_contacts_in_group(group)

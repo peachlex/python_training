@@ -170,15 +170,7 @@ class ContactHelper:
         wd = self.app.wd
         wd.get("http://localhost/addressbook/index.php?group={}".format(group_id))
 
-    def remove_contact_from_group_by_id(self, contact, group):
-        wd = self.app.wd
-        self.app.open_home_page()
-        self.open_group_with_contacts(group.group_id)
-        wd.find_element_by_css_selector("input[id='%s']" % contact.contact_id).click()
-        wd.find_element_by_name("remove").click()
-        self.contacts_cache = None
-
-    def remove_all_contacts_from_group_by_id(self, group):
+    def remove_all_contacts_from_group(self, group):
         wd = self.app.wd
         self.app.open_home_page()
         self.open_group_with_contacts(group.group_id)
