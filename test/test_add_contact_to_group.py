@@ -7,8 +7,8 @@ import random
 def test_add_contact_in_group(app, db, orm, check_ui):
     if len(db.get_group_list()) == 0:
         app.group.create(Group("test", "test", "test"))
-    if len(db.get_group_list()) == 0:
-        app.contact.create(Group("test", None, None))
+    if len(db.get_contacts_list()) == 0:
+        app.contact.create(Contact(name="test"))
     contacts = orm.get_contacts_list()
     groups = orm.get_group_list()
     contact = random.choice(contacts)
