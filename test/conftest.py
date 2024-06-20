@@ -15,7 +15,7 @@ target = None
 def load_config(file):
     global target
     if target is None:
-        config_file = os.path.abspath(f'../{file}')
+        config_file = os.path.abspath(f'{file}')
         with open(config_file) as f:
             target = json.load(f)
     return target
